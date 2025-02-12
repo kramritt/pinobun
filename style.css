@@ -87,36 +87,3 @@ section{
     background-color: #f44336;
     color: white;
 }
-
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
-    body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 2em; /* Adjusted for mobile */
-    }
-
-    .buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .yes-button, .no-button {
-        width: 100%;
-        font-size: 1.2em; /* Larger for easier tapping */
-        padding: 15px;
-    }
-
-    .gif_container img {
-        max-width: 90%;
-        height: auto;
-    }
-}
