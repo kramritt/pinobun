@@ -181,105 +181,11 @@
         </div>
     </section>
 
-    <!-- LeetCode section start -->
-<section class="leetcode" id="leetcode">
-    <div class="max-width">
-        <h2 class="title">LeetCode Stats</h2>
-        <div class="leetcode-content">
-            <div class="column left">
-                <div class="text">My Problem-Solving Journey</div>
-                <p>Here are some of my coding achievements on LeetCode:</p>
-                <div class="stats">
-                    <p><b>Problems Solved:</b> <span id="problems-solved">Loading...</span></p>
-                    <p><b>Contest Rating:</b> <span id="contest-rating">Loading...</span></p>
-                    <p><b>Global Rank:</b> <span id="global-rank">Loading...</span></p>
-                </div>
-                <div class="progress-bar">
-                    <p><b>Easy:</b> <span id="easy-solved">0</span></p>
-                    <div class="line easy"></div>
-                    <p><b>Medium:</b> <span id="medium-solved">0</span></p>
-                    <div class="line medium"></div>
-                    <p><b>Hard:</b> <span id="hard-solved">0</span></p>
-                    <div class="line hard"></div>
-                </div>
-                <a href="https://leetcode.com/Pin0Bun/" target="_blank" class="leetcode-link">View my LeetCode profile</a>
-            </div>
-            <div class="column right">
-                <img src="images/leetcode-stats.png" alt="LeetCode Stats" onerror="this.src='https://via.placeholder.com/300?text=LeetCode+Stats';">
-            </div>
-        </div>
-    </div>
-</section>
+    <!-- footer section start -->
+    <footer>
+        <span>Created By <a href="https://instagram.com/pin0bun">PinoBun</a> | <span class="far fa-copyright"></span> 2025 All rights reserved.</span>
+    </footer>
 
-<script>
-    async function fetchLeetCodeStats() {
-        const username = 'Pin0Bun';
-        const apiUrl = `https://leetcode-stats-api.herokuapp.com/${username}`;
-
-        try {
-            const response = await fetch(apiUrl);
-            const data = await response.json();
-
-            document.getElementById("problems-solved").textContent = data.totalSolved || 'N/A';
-            document.getElementById("contest-rating").textContent = data.ranking || 'N/A';
-            document.getElementById("global-rank").textContent = data.contributorRank || 'N/A';
-
-            document.getElementById("easy-solved").textContent = data.easySolved || 0;
-            document.getElementById("medium-solved").textContent = data.mediumSolved || 0;
-            document.getElementById("hard-solved").textContent = data.hardSolved || 0;
-
-            document.querySelector(".line.easy").style.width = `${data.easySolved / data.totalSolved * 100}%`;
-            document.querySelector(".line.medium").style.width = `${data.mediumSolved / data.totalSolved * 100}%`;
-            document.querySelector(".line.hard").style.width = `${data.hardSolved / data.totalSolved * 100}%`;
-        } catch (error) {
-            console.error("Error fetching LeetCode data:", error);
-        }
-    }
-
-    window.onload = fetchLeetCodeStats;
-</script>
-
-<style>
-.leetcode {
-    background-color: #f0f2f5;
-    padding: 50px 0;
-}
-.leetcode .title {
-    text-align: center;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-.leetcode .leetcode-content {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-    justify-content: space-around;
-}
-.leetcode .column {
-    width: 48%;
-}
-.leetcode .progress-bar .line {
-    background-color: #ddd;
-    height: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    position: relative;
-}
-.leetcode .progress-bar .easy { background-color: #4CAF50; }
-.leetcode .progress-bar .medium { background-color: #FFC107; }
-.leetcode .progress-bar .hard { background-color: #F44336; }
-
-.leetcode .leetcode-link {
-    display: inline-block;
-    margin-top: 15px;
-    color: #3b82f6;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.leetcode .leetcode-link:hover {
-    text-decoration: underline;
-}
-</style>
+    <script src="script.js"></script>
 </body>
 </html>
