@@ -181,12 +181,6 @@
         </div>
     </section>
 
-    <!-- footer section start -->
-    <footer>
-        <span>Created By <a href="https://instagram.com/pin0bun">PinoBun</a> | <span class="far fa-copyright"></span> 2025 All rights reserved.</span>
-    </footer>
-
-    <script src="script.js"></script>
     <!-- LeetCode section start -->
 <section class="leetcode" id="leetcode">
     <div class="max-width">
@@ -201,17 +195,17 @@
                     <p><b>Global Rank:</b> <span id="global-rank">Loading...</span></p>
                 </div>
                 <div class="progress-bar">
-                    <p>Easy: <span id="easy-solved">0</span></p>
+                    <p><b>Easy:</b> <span id="easy-solved">0</span></p>
                     <div class="line easy"></div>
-                    <p>Medium: <span id="medium-solved">0</span></p>
+                    <p><b>Medium:</b> <span id="medium-solved">0</span></p>
                     <div class="line medium"></div>
-                    <p>Hard: <span id="hard-solved">0</span></p>
+                    <p><b>Hard:</b> <span id="hard-solved">0</span></p>
                     <div class="line hard"></div>
                 </div>
-                <a href="https://leetcode.com/Pin0Bun/" target="_blank">View my LeetCode profile</a>
+                <a href="https://leetcode.com/Pin0Bun/" target="_blank" class="leetcode-link">View my LeetCode profile</a>
             </div>
             <div class="column right">
-                <img src="images/leetcode-stats.png" alt="LeetCode Stats">
+                <img src="images/leetcode-stats.png" alt="LeetCode Stats" onerror="this.src='https://via.placeholder.com/300?text=LeetCode+Stats';">
             </div>
         </div>
     </div>
@@ -219,7 +213,7 @@
 
 <script>
     async function fetchLeetCodeStats() {
-        const username = 'Pin0Bun'; // Updated with your LeetCode username
+        const username = 'Pin0Bun';
         const apiUrl = `https://leetcode-stats-api.herokuapp.com/${username}`;
 
         try {
@@ -253,14 +247,16 @@
 .leetcode .title {
     text-align: center;
     margin-bottom: 20px;
+    font-weight: bold;
 }
 .leetcode .leetcode-content {
     display: flex;
+    gap: 30px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .leetcode .column {
-    width: 45%;
+    width: 48%;
 }
 .leetcode .progress-bar .line {
     background-color: #ddd;
@@ -269,16 +265,21 @@
     border-radius: 5px;
     position: relative;
 }
-.leetcode .progress-bar .easy {
-    background-color: #4CAF50;
+.leetcode .progress-bar .easy { background-color: #4CAF50; }
+.leetcode .progress-bar .medium { background-color: #FFC107; }
+.leetcode .progress-bar .hard { background-color: #F44336; }
+
+.leetcode .leetcode-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #3b82f6;
+    font-weight: bold;
+    text-decoration: none;
 }
-.leetcode .progress-bar .medium {
-    background-color: #FFC107;
-}
-.leetcode .progress-bar .hard {
-    background-color: #F44336;
+
+.leetcode .leetcode-link:hover {
+    text-decoration: underline;
 }
 </style>
-
 </body>
 </html>
